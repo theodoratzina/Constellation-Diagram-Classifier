@@ -1,0 +1,60 @@
+{
+  "device": "cuda",
+  "model_id": "HuggingFaceTB/SmolVLM-256M-Instruct",
+  "epochs": 1,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 4.7904,
+      "seconds": 13721.4
+    }
+  ],
+  "test_accuracy": {
+    "modulation": 0.0,
+    "phase": 0.0,
+    "iq": 0.0,
+    "jamming": 0.795,
+    "snr": 0.0
+  },
+  "ood_test_accuracy": {
+    "modulation": 0.0,
+    "phase": 0.0,
+    "iq": 0.0,
+    "jamming": 0.74
+  },
+  "lora_config": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  },
+  "params": {
+    "total": 257848896,
+    "trainable": 1363968,
+    "trainable_fraction": 0.00528979577248219
+  },
+  "training_time_s": 13721.4,
+  "training_time_per_epoch_s": 13721.4,
+  "inference_latency": {
+    "total_seconds": 101.38870668411255,
+    "generations": 32,
+    "ms_per_image": 3168.397083878517
+  },
+  "severity_sensitivity": {
+    "phase": {
+      "none": 0.0,
+      "mild": 0.0,
+      "severe": 0.0
+    },
+    "iq": {
+      "none": 0.0,
+      "mild": 0.0,
+      "severe": 0.0
+    }
+  }
+}

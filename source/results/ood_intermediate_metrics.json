@@ -1,0 +1,11 @@
+{
+  "device": "cuda",
+  "n_samples": 320,
+  "cnn_accuracy": {
+    "modulation": 0.875,
+    "phase": 0.5625,
+    "iq": 0.640625
+  },
+  "vlm_accuracy": null,
+  "notes": "Intermediate-OOD: phase_noise_std_deg in {1,3,4,5}, iq_eps in {.025,.08,.10,.12}, iq_psi_deg in {1,4,6}. Training values: phase {0,2,6}, eps {0,.05,.15}, psi {0,2,8}. Ground-truth severity = nearest training level."
+}

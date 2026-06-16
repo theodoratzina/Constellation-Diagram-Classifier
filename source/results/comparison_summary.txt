@@ -1,0 +1,44 @@
+======================================================================
+CNN vs VLM — final comparison
+======================================================================
+
+Models
+----------------------------------------------------------------------
+  CNN: multi-head ResNet18 (15 epochs, device=cuda)
+  VLM: HuggingFaceTB/SmolVLM-256M-Instruct + LoRA (1 epochs, device=cuda)
+
+Per-task accuracy
+----------------------------------------------------------------------
+      task  CNN test  VLM test  CNN OOD  VLM OOD  CNN gap (in-OOD)  VLM gap (in-OOD)
+modulation     0.780     0.000    0.601    0.000             0.179             0.000
+     phase     0.582     0.000    0.361    0.000             0.221             0.000
+        iq     0.831     0.000    0.743    0.000             0.088             0.000
+       snr     0.924     0.000      NaN      NaN               NaN               NaN
+
+Computational complexity
+----------------------------------------------------------------------
+                      Metric        CNN         VLM
+            Total parameters 11,189,850 257,848,896
+        Trainable parameters 11,189,850   1,363,968
+      Trainable fraction (%)        100        0.53
+           Training time (s)     118.24    13721.40
+   Training time / epoch (s)       7.88    13721.40
+Inference latency (ms/image)       1.73     3168.40
+                      Device       cuda        cuda
+                      Epochs         15           1
+
+Aggregate
+----------------------------------------------------------------------
+  Mean in-distribution accuracy : CNN=0.779   VLM=0.000
+  Mean generalization gap (OOD) : CNN=+0.163  VLM=+0.000
+  (positive gap = drop on OOD)
+
+Interpretation notes for the report
+----------------------------------------------------------------------
+  - On in-distribution test, the CNN achieves the higher mean accuracy
+    across the 4 shared tasks.
+  - On the held-out SNR bin, the VLM shows the smaller mean drop,
+    suggesting better generalization to unseen impairment conditions.
+  - The modulation task is the most challenging (16 classes vs 3 for
+    phase/IQ); confusion is highest among high-order QAM/APSK at low SNR.
+======================================================================

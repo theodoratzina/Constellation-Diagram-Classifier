@@ -1,0 +1,9 @@
+Metric,CNN,VLM
+Total parameters,11189850,257848896
+Trainable parameters,11189850,1363968
+Trainable fraction (%),100.0,0.5289795772482191
+Training time (s),118.24177551269531,13721.4
+Training time / epoch (s),7.882785034179688,13721.4
+Inference latency (ms/image),1.7334641350640192,3168.397083878517
+Device,cuda,cuda
+Epochs,15,1
